@@ -1,0 +1,67 @@
+ul.ntb-folder-list {
+  padding: 0;
+  list-style: none;
+
+  .items-list {
+    list-style: none;
+
+    li {
+      padding: 5px;
+      font-size: 1.2rem;
+      color: @gray-darker;
+
+      &:hover {
+        cursor: pointer;
+        color: @brand-primary;
+      }
+    }
+
+    &.bg-primary li {
+      color: #fff;
+    }
+  }
+
+  li {
+
+    a {
+      display: block;
+      position: relative;
+      padding: 10px 10px 10px 35px;
+      font-size: 1.2rem;
+      color: @gray-darker;
+
+      &:hover, &:focus, &.active {
+        color: @brand-primary;
+        text-decoration: none;
+      }
+
+      .glyphicon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -0.9rem;
+        font-size: 1.4rem;
+      }
+    }
+
+    ul.folder-list, ul.ntb-folder-list {
+      padding-left: 30px;
+    }
+  }
+
+/*  &.folder-list-selectable {
+
+    a {
+      padding-left: 40px;
+
+      &.bg-primary {
+        color: #fff;
+      }
+
+      .glyphicon {
+        left: 10px;
+      }
+    }
+
+  }*/
+}

@@ -1,0 +1,10 @@
+<td>{{ item.id }}</td>
+<td>
+  <a ng-if="type === 'folder' && ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: item.id})">
+    <i class="glyphicon glyphicon-folder-open"></i> {{ item.name }}
+  </a>
+  <a ng-if="type === 'folder' && ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(item.id)">
+    <i class="glyphicon glyphicon-folder-open"></i> {{ item.id }} {{ item.name }}
+  </a>
+  <a ng-if="type === 'item'" ng-click="ntb.config.selectionCallback(item)">{{ item.name }}</a>
+</td>

@@ -1,0 +1,12 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-table="item" type="'folder'"></tr>
+    <tr ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-table="item" type="'item'"></tr>
+  </tbody>
+</table>

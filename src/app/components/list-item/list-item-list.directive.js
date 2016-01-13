@@ -11,17 +11,19 @@
       restrict: 'A',
       templateUrl: 'app/components/list-item/list-item-list.html',
       scope: {
-        item: "=ntbListItemList"
+        item: "=ntbListItemList",
+        type: "="
       },
-      controller: NtbListItemController
+      require: "^ntbBrowser",
+      link: function ($scope, element, attrs, browserController) {
+
+        $scope.ntb = browserController.ntb;
+
+      }
     };
 
     return directive;
 
-    /** @ngInject */
-    function NtbListItemController() {
-      
-    }
   }
 
 })();

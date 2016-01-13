@@ -1,8 +1,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>id</th>
-      <th>name</th>
+      <th ng-repeat="column in ntb.config.columns">
+        {{ column.i18n }}
+      </th>
     </tr>
   </thead>
   <tbody>

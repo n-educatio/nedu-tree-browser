@@ -16,6 +16,10 @@
       },
       treeBrowseMethod: "click",  //["click", "ui.router"],
       displayAs: "table",         //["table", "list"]
+      columns: [
+        { key: "id", i18n: "Id" },
+        { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
+      ],
       selectionCallback: function () {}
     });
 

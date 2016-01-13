@@ -37,7 +37,6 @@
             function (resp) {
               ntb.folderTree = resp;
               getElements(resp[0].id);
-              console.log(ntb.folderTree);
             },
             function (resp) {
               console.log("Error loading folder tree", resp);
@@ -78,7 +77,6 @@
             function (resp) {
               ntb.currentFolder.elements.folders = resp.folders;
               ntb.currentFolder.elements.items = resp.items;
-              console.log(ntb.currentFolder);
             },
             function (resp) {
               console.log("Error loading folder", resp);

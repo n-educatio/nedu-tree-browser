@@ -1,7 +1,7 @@
 <div class="list-group">
 
-  <a ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-list="item" class="list-group-item" ng-if="ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: item.id})" ui-sref-active="active"></a>
-  <a ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-list="item" class="list-group-item" ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(item.id)"></a>
+  <a ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-list="item" type="'folder'" class="list-group-item" ng-if="ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: item.id})" ui-sref-active="active"></a>
+  <a ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-list="item" type="'folder'" class="list-group-item" ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(item.id)"></a>
 
-  <a ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-list="item" class="list-group-item" ng-click="ntb.config.selectionCallback(item)"></a>
+  <a ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-list="item" type="'item'" class="list-group-item" ng-click="ntb.config.selectionCallback(item)"></a>
 </div>

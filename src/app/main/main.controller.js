@@ -21,6 +21,10 @@
         }
       },
       displayAs: "list",
+      columns: [
+        { key: "id", i18n: "Id" },
+        { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
+      ],
       selectionCallback: function (item) {
         console.log(item.id, item.name, "has been selected");
       }

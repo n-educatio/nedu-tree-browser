@@ -2,7 +2,7 @@
   <li ng-repeat="folder in folders | orderBy: 'name'">
 
     <a ng-if="ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: folder.id})" ui-sref-active="active"><i class="glyphicon glyphicon-folder-open"></i> {{ folder.name }}</a>
-    <a ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(folder.id)"><i class="glyphicon glyphicon-folder-open"></i> {{ folder.id }} {{ folder.name }}</a>
+    <a ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(folder.id)"><i class="glyphicon glyphicon-folder-open"></i> {{ folder.name }}</a>
 
     <ntb-tree ng-if="folder.folders.length" folders="folder.folders"></ntb-tree>
   </li>

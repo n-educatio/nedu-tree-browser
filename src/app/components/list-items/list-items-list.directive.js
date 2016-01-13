@@ -18,6 +18,8 @@
 
         $scope.ntb = browserController.ntb;
 
+        console.log($scope.ntb);
+
       }
     };
 

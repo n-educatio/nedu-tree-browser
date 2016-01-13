@@ -20,7 +20,7 @@
           params: {}
         }
       },
-      displayAs: "list",
+      displayAs: "table",
       columns: [
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }

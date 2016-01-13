@@ -54,6 +54,7 @@
 
       ntb.currentFolder = {
         id: null,
+        parent: null,
         elements: {
           folders: [],
           items: []
@@ -77,6 +78,7 @@
             function (resp) {
               ntb.currentFolder.elements.folders = resp.folders;
               ntb.currentFolder.elements.items = resp.items;
+              ntb.currentFolder.parent = resp.parent_id;
             },
             function (resp) {
               console.log("Error loading folder", resp);

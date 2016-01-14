@@ -1,6 +1,10 @@
 {
   "name": "neduTreeBrowser",
   "version": "0.0.2",
+  "main": [
+    "dist/scripts/app.js",
+    "dist/styles/app.css"
+  ],
   "dependencies": {
     "jquery": "~2.1.4",
     "angular-resource": "~1.4.2",

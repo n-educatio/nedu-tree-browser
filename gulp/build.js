@@ -115,3 +115,14 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', ['html', 'fonts', 'other']);
+
+
+/**
+ * task for bower plugin biuild
+ */
+gulp.task('bower-build', ['clean'], function () {
+
+  conf.jsFilesFilter = ['**/*', '!main/**/*'];
+  gulp.start('build');
+
+});

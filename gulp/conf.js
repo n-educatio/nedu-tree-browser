@@ -14,6 +14,7 @@ var gutil = require('gulp-util');
 exports.paths = {
   src: 'src',
   dist: 'dist',
+  bowerDist: 'bower_dist',
   tmp: '.tmp',
   e2e: 'e2e'
 };
@@ -39,3 +40,9 @@ exports.errorHandler = function(title) {
     this.emit('end');
   };
 };
+
+
+/**
+ * js files for build
+ */
+exports.jsFilesFilter = ['**/*'];

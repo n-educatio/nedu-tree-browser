@@ -20,7 +20,8 @@ gulp.task('scripts', function() {
 
 function buildScripts() {
   return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
+    .pipe($.filter(conf.jsFilesFilter))
     .pipe($.eslint())
     .pipe($.eslint.format())
-    .pipe($.size())
+    .pipe($.size());
 };

@@ -2,6 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
+var debug = require('gulp-debug');
 var conf = require('./conf');
 
 var $ = require('gulp-load-plugins')();
@@ -27,6 +28,8 @@ gulp.task('inject', ['scripts', 'styles'], function () {
     path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
     path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
   ])
+  .pipe($.filter(conf.jsFilesFilter))
+  //.pipe(debug())
   .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
   var injectOptions = {

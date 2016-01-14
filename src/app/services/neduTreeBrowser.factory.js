@@ -6,7 +6,7 @@
       .factory('neduTreeBrowser', neduTreeBrowser);
 
   /** @ngInject */
-  function neduTreeBrowser(ntbConfig, $resource) {
+  function neduTreeBrowser(ntbConfig, $resource, $log) {
 
     var ntbFactory = function (config) {
 
@@ -39,7 +39,7 @@
               getElements(resp[0].id);
             },
             function (resp) {
-              console.log("Error loading folder tree", resp);
+              $log.debug("Error loading folder tree", resp);
             }
           );
       };
@@ -81,7 +81,7 @@
               ntb.currentFolder.parent = resp.parent_id;
             },
             function (resp) {
-              console.log("Error loading folder", resp);
+              $log.debug("Error loading folder", resp);
             }
           );
 

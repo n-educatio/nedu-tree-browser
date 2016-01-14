@@ -21,7 +21,7 @@
 
     /** @ngInject */
     function NtbListController() {
-      
+
     }
   }
 

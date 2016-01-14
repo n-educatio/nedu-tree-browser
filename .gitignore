@@ -6,7 +6,6 @@ coverage/
 .tmp/
 dist/assets/
 dist/fonts/
-dist/maps/
 dist/fixtures/
 dist/favicon.ico
 dist/index.html

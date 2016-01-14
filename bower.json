@@ -26,5 +26,21 @@
   "resolutions": {
     "jquery": "~2.1.4",
     "angular": "~1.4.2"
-  }
+  },
+  "ignore": [
+    "src/",
+    "gulp/",
+    "e2e/",
+    ".bowerrc",
+    ".editorconfig",
+    ".eslintrc",
+    ".gitignore",
+    ".yo-rc.json",
+    "README.md",
+    "bower.json",
+    "gulpfile.js",
+    "karma.conf.js",
+    "package.json",
+    "protractor.conf.js"
+  ]
 }

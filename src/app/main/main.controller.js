@@ -6,8 +6,21 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
+  function MainController($scope) {
     var vm = this;
+
+    vm.changeEndpoints = function () {
+      $scope.$broadcast("changeEndpoints", {
+        tree: {
+          url: "/something/:foo",
+          params: { foo: "foo123" }
+        },
+        folder: {
+          url: "/something/:foo/:id",
+          params: { foo: "foo123" }
+        }
+      });
+    };
 
     vm.ntbConfig1 = {
       endpoints: {

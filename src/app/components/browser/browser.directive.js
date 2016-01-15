@@ -18,7 +18,7 @@
       bindToController: true,
       replace: true,
 
-      link: function ($scope, element, attr) {
+      link: function ($scope) {
         $scope.$on("changeEndpoints", function (event, endpoints) {
 
           var newConfig = angular.extend({}, $scope.vm.config);

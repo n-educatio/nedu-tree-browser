@@ -12,12 +12,12 @@
     vm.changeEndpoints = function () {
       $scope.$broadcast("changeEndpoints", {
         tree: {
-          url: "/something/:foo",
-          params: { foo: "foo123" }
+          url: "/fixtures/:param/tree.json",
+          params: { param: "test" }
         },
         folder: {
-          url: "/something/:foo/:id",
-          params: { foo: "foo123" }
+          url: "/fixtures/:param/:id.json",
+          params: { param: "test" }
         }
       });
     };

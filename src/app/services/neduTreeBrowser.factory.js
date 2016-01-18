@@ -36,7 +36,7 @@
           .then(
             function (resp) {
               ntb.folderTree = resp;
-              getElements(resp[0].id);
+              ntb.browseTo(resp[0].id);
             },
             function (resp) {
               $log.debug("Error loading folder tree", resp);
@@ -61,7 +61,7 @@
         }
       };
 
-      var getElements = function (id) {
+      ntb.browseTo = function (id) {
 
         ntb.currentFolder.id = id;
 
@@ -85,10 +85,6 @@
             }
           );
 
-      };
-
-      ntb.browseTo = function (folderId) {
-        getElements(folderId);
       };
 
       return ntb;

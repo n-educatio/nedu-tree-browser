@@ -11,7 +11,8 @@
       restrict: 'E',
       templateUrl: 'app/components/list-items/list-items-list.html',
       scope: {
-        contents: "="
+        contents: "=",
+        ntb: "="
       },
       require: "^ntbBrowser",
       link: function ($scope, element, attrs, browserController) {

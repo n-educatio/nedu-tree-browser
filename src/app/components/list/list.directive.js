@@ -12,7 +12,8 @@
       templateUrl: 'app/components/list/list.html',
       scope: {
         contents: "=",
-        displayAs: "="
+        displayAs: "=",
+        ntb: "="
       },
       controller: NtbListController
     };

@@ -13,7 +13,7 @@
         <a ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(contents.parent)">..</a>
       </td>
     </tr>
-    <tr ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-table="item" type="'folder'"></tr>
-    <tr ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-table="item" type="'item'"></tr>
+    <tr ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-table="item" type="'folder'" ntb="ntb"></tr>
+    <tr ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-table="item" type="'item'" ntb="ntb"></tr>
   </tbody>
 </table>

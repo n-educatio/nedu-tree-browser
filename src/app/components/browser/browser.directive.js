@@ -11,33 +11,20 @@
       restrict: 'E',
       templateUrl: 'app/components/browser/browser.html',
       scope: {
-        config: "="
+        ntb: "="
       },
       controller: NtbBrowserController,
       controllerAs: 'vm',
       bindToController: true,
-      replace: true,
-
-      link: function ($scope) {
-        $scope.$on("changeEndpoints", function (event, endpoints) {
-
-          var newConfig = angular.extend({}, $scope.vm.config);
-          newConfig.endpoints = endpoints;
-
-          $scope.vm.ntb = new $scope.vm.neduTreeBrowser(newConfig);
-        });
-      }
+      replace: true
     };
 
     return directive;
 
     /** @ngInject */
-    function NtbBrowserController(neduTreeBrowser) {
-      var vm = this;
+    function NtbBrowserController() {
 
-      vm.neduTreeBrowser = neduTreeBrowser;
-
-      vm.ntb = new neduTreeBrowser(vm.config);
+      //var vm = this;
 
     }
   }

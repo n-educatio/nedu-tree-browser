@@ -24,12 +24,63 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container" ng-controller="MainController as main">
+    <div class="container-fluid" ng-controller="MainController as main">
 
-      <button ng-click="main.changeEndpoints()">changeEndpoints!!</button>
+      <div class="col-sm-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group">
+              <label>Endpoint</label>
+              <select class="form-control" ng-options="endpoint as endpoint.url2 for endpoint in main.endpoints" ng-model="main.selectedEndpoint" ng-change="main.changeEndpoints()"></select>
+            </div>
+            <div class="form-group">
+              <label>Display type</label>
+              <select class="form-control" ng-options="displayType as displayType.name for displayType in main.displayTypes" ng-model="main.selectedDisplayType" ng-change="main.changeDisplayType()"></select>
+            </div>
+            <div class="form-group">
+              <label>Display type</label>
+              <div class="row">
+                <div class="col-sm-4">key</div>
+                <div class="col-sm-4">i18n</div>
+                <div class="col-sm-1">ico</div>
+                <div class="col-sm-1">link</div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div class="row" ng-repeat="col in main.ntbConfig.columns">
+                <div class="col-sm-4">
+                  <input class="form-control input-sm" ng-model="col.key"/>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control input-sm" ng-model="col.i18n"/>
+                </div>
+                <div class="col-sm-1">
+                  <input type="checkbox" ng-model="col.hasIcon"/>
+                </div>
+                <div class="col-sm-1">
+                  <input type="checkbox" ng-model="col.hasLink"/>
+                </div>
+                <div class="col-sm-1">
+                  <button class="btn btn-default btn-sm" ng-click="main.removeColumn($index)">-</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 "><button class="btn btn-default btn-sm" ng-click="main.addColumn()">+ Column</button></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <small>Available demo columns:<br/>[id, name, tags, creator, created_at, updated_by, updated_at]</small>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <ntb-browser config="main.ntbConfig1"></ntb-browser>
-
+      <div class="col-sm-9">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ntb-browser ntb="main.ntbInstance"></ntb-browser>
+          </div>
+        </div>
+      </div>
     </div>
 
 

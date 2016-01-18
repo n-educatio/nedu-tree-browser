@@ -12,7 +12,8 @@
       templateUrl: 'app/components/list-item/list-item-list.html',
       scope: {
         item: "=ntbListItemList",
-        type: "="
+        type: "=",
+        ntb: "="
       },
       require: "^ntbBrowser",
       link: function ($scope, element, attrs, browserController) {

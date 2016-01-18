@@ -8,7 +8,7 @@
   /** @ngInject */
   function ntbTree(ntbRecursionHelper) {
     var directive = {
-      scope: { folders: "=" },
+      scope: { folders: "=", ntb: "=" },
       restrict: 'E',
       replace: 'true',
       templateUrl: 'app/components/tree/tree.html',
@@ -16,7 +16,7 @@
       compile: function(element) {
         return ntbRecursionHelper.compile(element, function ($scope, element, attrs, browserController) {
 
-          $scope.ntb = browserController.ntb;
+          //$scope.ntb = browserController.ntb;
 
         });
       }

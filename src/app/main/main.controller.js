@@ -64,7 +64,7 @@
 
     vm.removeColumn = function (index) {
       vm.ntbConfig.columns.splice(index, 1);
-    }
+    };
 
     vm.ntbConfig = {
       endpoints: {

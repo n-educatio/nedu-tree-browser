@@ -14,14 +14,6 @@
         item: "=ntbListItemTable",
         type: "=",
         ntb: "="
-      },
-      require: "^ntbBrowser",
-      link: function ($scope, element, attrs, browserController) {
-
-        $scope.ntb = browserController.ntb;
-
-        //console.log($scope);
-
       }
     };
 

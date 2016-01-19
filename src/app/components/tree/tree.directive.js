@@ -14,11 +14,7 @@
       templateUrl: 'app/components/tree/tree.html',
       require: "^ntbBrowser",
       compile: function(element) {
-        return ntbRecursionHelper.compile(element, function ($scope, element, attrs, browserController) {
-
-          //$scope.ntb = browserController.ntb;
-
-        });
+        return ntbRecursionHelper.compile(element);
       }
     };
 

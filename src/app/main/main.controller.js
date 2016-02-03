@@ -84,7 +84,21 @@
       ],
       selectionCallback: function (item) {
         console.log(item.id, item.name, "has been selected");
-      }
+      },
+      buttons: [
+        {
+          class: "btn btn-primary btn-xs",
+          icon: "glyphicon glyphicon-pencil",
+          text: "Edit",
+          action: function () { console.log("Edit clicked!"); }
+        },
+        {
+          class: "btn btn-primary btn-xs",
+          icon: "glyphicon glyphicon-eye-open",
+          text: null,
+          action: function () { console.log("Preview clicked!"); }
+        }
+      ]
     };
 
 

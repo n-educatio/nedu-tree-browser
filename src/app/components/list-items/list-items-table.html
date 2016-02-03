@@ -4,6 +4,7 @@
       <th ng-repeat="column in ntb.config.columns">
         {{ column.i18n }}
       </th>
+      <th ng-if="ntb.config.buttons && ntb.config.buttons.length"></th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
         <a ng-if="ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: contents.parent})">..</a>
         <a ng-if="ntb.config.treeBrowseMethod === 'click'"     ng-click="ntb.browseTo(contents.parent)">..</a>
       </td>
+      <td ng-if="ntb.config.buttons && ntb.config.buttons.length"></td>
     </tr>
     <tr ng-repeat="item in contents.elements.folders | orderBy: 'name'" ntb-list-item-table="item" type="'folder'" ntb="ntb"></tr>
     <tr ng-repeat="item in contents.elements.items | orderBy: 'name'"   ntb-list-item-table="item" type="'item'" ntb="ntb"></tr>

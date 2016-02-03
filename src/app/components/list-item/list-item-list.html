@@ -3,3 +3,9 @@
   <i class="glyphicon glyphicon-file"         ng-if="column.hasIcon && type === 'item'"></i>
   {{ item[column.key] }}
 </span>
+<span ng-if="ntb.config.buttons && ntb.config.buttons.length && type === 'item'" class="pull-right">
+  <button ng-repeat="button in ntb.config.buttons" class="{{ button.class }}" ng-click="button.action()">
+    <i ng-if="button.icon" class="{{ button.icon }}"></i>
+    {{ button.text ? button.text : ''}}
+  </button>
+</span>

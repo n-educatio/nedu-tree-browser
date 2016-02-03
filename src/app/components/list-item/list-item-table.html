@@ -22,7 +22,7 @@
 
 </td>
 <td ng-if="ntb.config.buttons && ntb.config.buttons.length">
-  <button ng-if="type === 'item'" ng-repeat="button in ntb.config.buttons" class="{{ button.class }}" ng-click="button.action()">
+  <button ng-if="type === 'item'" ng-repeat="button in ntb.config.buttons" class="{{ button.class }}" ng-click="button.action($event)">
     <i ng-if="button.icon" class="{{ button.icon }}"></i>
     {{ button.text ? button.text : ''}}
   </button>

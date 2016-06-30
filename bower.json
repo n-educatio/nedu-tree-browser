@@ -1,6 +1,6 @@
 {
   "name": "neduTreeBrowser",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": [
     "dist/scripts/app.js",
     "dist/styles/app.css"

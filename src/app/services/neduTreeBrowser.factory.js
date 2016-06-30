@@ -16,6 +16,44 @@
       angular.extend(ntb.config, ntbConfig, config);
 
 
+      /**
+      * folder contents
+      */
+
+      ntb.currentFolder = {
+        id: null,
+        parent: null,
+        elements: {
+          folders: [],
+          items: []
+        }
+      };
+
+      ntb.browseTo = function (id) {
+
+        ntb.currentFolder.id = id;
+
+        var params = {};
+        if (typeof ntb.config.endpoints.folder.params !== "undefined") {
+          params = angular.extend(params, ntb.config.endpoints.folder.params);
+        }
+        params = angular.extend(params, {id: id});
+
+        $resource(ntb.config.endpoints.folder.url, params, { query: { isArray: false }})
+        .query()
+        .$promise
+        .then(
+          function (resp) {
+            ntb.currentFolder.elements.folders = resp.folders;
+            ntb.currentFolder.elements.items = resp.items;
+            ntb.currentFolder.parent = resp.parent_id;
+          },
+          function (resp) {
+            $log.debug("Error loading folder", resp);
+          }
+        );
+
+      };
 
       /**
        * folders tree
@@ -56,47 +94,6 @@
       };
 
       getFoldersTree();
-
-
-
-      /**
-       * folder contents
-       */
-
-      ntb.currentFolder = {
-        id: null,
-        parent: null,
-        elements: {
-          folders: [],
-          items: []
-        }
-      };
-
-      ntb.browseTo = function (id) {
-
-        ntb.currentFolder.id = id;
-
-        var params = {};
-        if (typeof ntb.config.endpoints.folder.params !== "undefined") {
-          params = angular.extend(params, ntb.config.endpoints.folder.params);
-        }
-        params = angular.extend(params, {id: id});
-
-        $resource(ntb.config.endpoints.folder.url, params, { query: { isArray: false }})
-          .query()
-          .$promise
-          .then(
-            function (resp) {
-              ntb.currentFolder.elements.folders = resp.folders;
-              ntb.currentFolder.elements.items = resp.items;
-              ntb.currentFolder.parent = resp.parent_id;
-            },
-            function (resp) {
-              $log.debug("Error loading folder", resp);
-            }
-          );
-
-      };
 
       return ntb;
 

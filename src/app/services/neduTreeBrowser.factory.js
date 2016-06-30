@@ -48,6 +48,7 @@
         } else {
 
           ntb.folderTree = ntb.config.rawData.tree;
+          ntb.browseTo(ntb.config.rawData.tree[0].id);
 
         }
       };

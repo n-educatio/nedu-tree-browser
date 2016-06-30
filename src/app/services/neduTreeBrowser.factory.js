@@ -25,23 +25,31 @@
 
       var getFoldersTree = function () {
 
-        var params = {};
-        if (typeof ntb.config.endpoints.tree.params !== "undefined") {
-          params = angular.extend(params, ntb.config.endpoints.tree.params);
-        }
+        if (typeof ntb.config.endpoints.tree !== "undefined") {
 
-        $resource(ntb.config.endpoints.tree.url, params)
-          .query()
-          .$promise
-          .then(
-            function (resp) {
-              ntb.folderTree = resp;
-              ntb.browseTo(resp[0].id);
-            },
-            function (resp) {
-              $log.debug("Error loading folder tree", resp);
-            }
-          );
+          var params = {};
+          if (typeof ntb.config.endpoints.tree.params !== "undefined") {
+            params = angular.extend(params, ntb.config.endpoints.tree.params);
+          }
+
+          $resource(ntb.config.endpoints.tree.url, params)
+            .query()
+            .$promise
+            .then(
+              function (resp) {
+                ntb.folderTree = resp;
+                ntb.browseTo(resp[0].id);
+              },
+              function (resp) {
+                $log.debug("Error loading folder tree", resp);
+              }
+            );
+
+        } else {
+
+          ntb.folderTree = ntb.config.rawData.tree;
+
+        }
       };
 
       getFoldersTree();

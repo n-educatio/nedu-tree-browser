@@ -16,6 +16,8 @@
       },
       treeBrowseMethod: "click",  //["click", "ui.router"],
       displayAs: "table",         //["table", "list"]
+      sortTreeKey: 'name',
+      sortListKey: 'name',
       columns: [
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }

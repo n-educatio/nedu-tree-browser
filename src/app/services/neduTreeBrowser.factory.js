@@ -6,7 +6,7 @@
       .factory('neduTreeBrowser', neduTreeBrowser);
 
   /** @ngInject */
-  function neduTreeBrowser(ntbConfig, $resource, $log) {
+  function neduTreeBrowser(ntbConfig, $resource, $log, ListSort) {
 
     var ntbFactory = function (config) {
 
@@ -44,8 +44,8 @@
         .$promise
         .then(
           function (resp) {
-            ntb.currentFolder.elements.folders = resp.folders;
-            ntb.currentFolder.elements.items = resp.items;
+            ntb.currentFolder.elements.folders = resp.folders.sort(ListSort.sortByKey('name', 1));
+            ntb.currentFolder.elements.items = resp.items.sort(ListSort.sortByKey('name', 1));
             ntb.currentFolder.parent = resp.parent_id;
           },
           function (resp) {

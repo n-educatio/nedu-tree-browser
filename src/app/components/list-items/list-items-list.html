@@ -1,3 +1,6 @@
+<div class="list-group-select-all">
+  <span ng-if="ntb.config.isCheckBoxList && contents.elements.items.length !== 0"><input type="checkbox" class="select-all-checkbox" ng-click="ntb.config.selectionAllCallback()" /> {{ ntb.config.i18n.select_all }}</span>
+</div>
 <div class="list-group">
 
   <a class="list-group-item" ng-if="contents.parent && ntb.config.treeBrowseMethod === 'ui.router'" ui-sref=".folder({folder: contents.parent})">..</a>

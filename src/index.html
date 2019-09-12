@@ -37,6 +37,10 @@
               <label>Display type</label>
               <select class="form-control" ng-options="displayType as displayType.name for displayType in main.displayTypes" ng-model="main.selectedDisplayType" ng-change="main.changeDisplayType()"></select>
             </div>
+            <div ng-if="main.selectedDisplayType.name ==='list'" class="form-group">
+              <label>List with Checkbox</label>
+              <input type="checkbox" ng-model="main.selectedCheckBoxList" ng-change="main.changeCheckbox()"/>
+            </div>
             <div class="form-group">
               <label>Display type</label>
               <div class="row">

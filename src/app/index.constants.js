@@ -22,7 +22,11 @@
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
       ],
-      selectionCallback: function () {}
+      i18n: {
+        "select_all" : ""
+      },
+      selectionCallback: function () {},
+      selectionAllCallback: function () {}
     });
 
 })();

@@ -58,6 +58,12 @@
       vm.ntbInstance = new neduTreeBrowser(vm.ntbConfig);
     };
 
+    vm.changeCheckbox = function () {
+      vm.ntbConfig.isCheckBoxList = vm.selectedCheckBoxList;
+
+      vm.ntbInstance = new neduTreeBrowser(vm.ntbConfig);
+    };
+
     vm.addColumn = function () {
       vm.ntbConfig.columns.push({ key: "", i18n: "", hasIcon: false, hasLink: false});
     };
@@ -78,12 +84,19 @@
         }
       },
       displayAs: "list",
+      isCheckBoxList: false,
       columns: [
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
       ],
       selectionCallback: function (item) {
         console.log(item.id, item.name, "has been selected");
+      },
+      selectionAllCallback: function () {
+        console.log("Items have been selected");
+      },
+      i18n: {
+        "select_all": "Select all"
       },
       buttons: [
         {

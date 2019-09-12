@@ -18,6 +18,7 @@
       displayAs: "table",         //["table", "list"]
       sortTreeKey: 'name',
       sortListKey: 'name',
+      isCheckBoxList: false,
       columns: [
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }

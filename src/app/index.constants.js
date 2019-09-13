@@ -28,6 +28,7 @@
         "add_los": ""
       },
       selectionAllCallback: function () {},
+      selectionCallback: function() {},
       addSelectedCheckbox: function() {}
     });
 

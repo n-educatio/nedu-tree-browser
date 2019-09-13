@@ -89,14 +89,15 @@
         { key: "id", i18n: "Id" },
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
       ],
-      selectionCallback: function (item) {
-        console.log(item.id, item.name, "has been selected");
-      },
       selectionAllCallback: function () {
         console.log("Items have been selected");
       },
+      addSelectedCheckbox: function () {
+        console.log("Items have been added");
+      },
       i18n: {
-        "select_all": "Select all"
+        "select_all": "Select all",
+        "add_los": "Add learning objects"
       },
       buttons: [
         {

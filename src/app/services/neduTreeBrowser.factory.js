@@ -56,6 +56,12 @@
 
       };
 
+      ntb.isSelectedCheckbox = function() {
+        return ntb.currentFolder.elements.items.some(function(item) {
+          return item.checked;
+        });
+      };
+
       /**
        * folders tree
        */

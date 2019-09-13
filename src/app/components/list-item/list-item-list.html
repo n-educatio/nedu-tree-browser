@@ -1,4 +1,4 @@
-<span ng-if="type === 'item' && ntb.config.isCheckBoxList"><input type="checkbox" id="{{ item.id }}" class="list-group-checkbox" /></span>
+<span ng-if="type === 'item' && ntb.config.isCheckBoxList"><input type="checkbox" ng-model="item.checked" id="{{ item.id }}" class="list-group-checkbox" /></span>
 <span ng-repeat="column in ntb.config.columns">
   <i class="glyphicon glyphicon-folder-close" ng-if="column.hasIcon && type === 'folder'" ></i>
   <i class="glyphicon glyphicon-file"         ng-if="column.hasIcon && type === 'item'"></i>

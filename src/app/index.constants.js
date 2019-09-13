@@ -24,10 +24,11 @@
         { key: "name", i18n: "Name", hasIcon: true, hasLink: true }
       ],
       i18n: {
-        "select_all" : ""
+        "select_all" : "",
+        "add_los": ""
       },
-      selectionCallback: function () {},
-      selectionAllCallback: function () {}
+      selectionAllCallback: function () {},
+      addSelectedCheckbox: function() {}
     });
 
 })();

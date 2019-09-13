@@ -13,6 +13,7 @@
       var ntb = this;
 
       ntb.config = {};
+      ntb.selectAll = false;
       angular.extend(ntb.config, ntbConfig, config);
 
 
@@ -32,7 +33,7 @@
       ntb.browseTo = function (id) {
 
         ntb.currentFolder.id = id;
-
+        ntb.selectAll = false;
         var params = {};
         if (typeof ntb.config.endpoints.folder.params !== "undefined") {
           params = angular.extend(params, ntb.config.endpoints.folder.params);

@@ -1,5 +1,5 @@
 <div class="list-group-select-all">
-  <span ng-if="ntb.config.isCheckBoxList && contents.elements.items.length !== 0"><input type="checkbox" class="select-all-checkbox" ng-click="ntb.config.selectionAllCallback()" /> {{ ntb.config.i18n.select_all }}</span>
+  <span ng-if="ntb.config.isCheckBoxList && contents.elements.items.length !== 0"><input type="checkbox" ng-model="ntb.selectAll" class="select-all-checkbox" ng-click="ntb.config.selectionAllCallback()" /> {{ ntb.config.i18n.select_all }}</span>
 </div>
 <div class="list-group">
 

@@ -29,6 +29,7 @@
       },
       selectionAllCallback: function () {},
       selectionCallback: function() {},
+      changeLoCallback: function() {},
       addSelectedCheckbox: function() {}
     });
 

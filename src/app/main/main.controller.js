@@ -95,6 +95,9 @@
       selectionCallback: function (item) {
         console.log(item.id, item.name, "has been selected");
       },
+      changeLoCallback: function (item) {
+        console.log(item.id, item.name, "has been changed");
+      },
       addSelectedCheckbox: function () {
         console.log("Items have been added");
       },
